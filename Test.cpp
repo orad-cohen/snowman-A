@@ -14,13 +14,7 @@ using namespace std;
  * HNLRXYTB
  **/
 
-string nospaces(string input) {
-	std::erase(input, ' ');
-	std::erase(input, '\t');
-	std::erase(input, '\n');
-	std::erase(input, '\r');
-	return input;
-}
+
 
 TEST_CASE("good snowman code"){
     CHECK(snowman(11111111)=="\n _===_\n (.,.)\n<( : )>\n ( : )\n");
