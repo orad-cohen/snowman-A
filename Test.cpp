@@ -14,19 +14,25 @@ using namespace std;
  * HNLRXYTB
  **/
 
-
+string nospaces(string input) {
+	std::erase(input, ' ');
+	std::erase(input, '\t');
+	std::erase(input, '\n');
+	std::erase(input, '\r');
+	return input;
+}
 
 TEST_CASE("good snowman code"){
-    CHECK(snowman(11111111)=="\n _===_\n (.,.)\n<( : )>\n ( : )\n");
-    CHECK(snowman(22412131)=="\n  ___ \n  ....\n\\(-..)\n (> <)>\n ( : )\n");
-    CHECK(snowman(12411223)=="\n _===_\n\\(-..)\n (\" \")>\n (___)\n");
-    CHECK(snowman(32334144)=="\n   _  \n  /_\\ \n (o.o)\n (   )>\n (   )\n");
-    CHECK(snowman(12341234)=="\n _===_\n (O.o)/\n<(> <)\n (   )");
-    CHECK(snowman(43214321)=="\n  ___ \n (_*_)\n (o_.)\n (] [)\\ \n ( : )\n");
-    CHECK(snowman(43432112)=="\n  ___ \n (_*_)\n\\(-_O)\n ( : )>\n (\" \")\n");
-    CHECK(snowman(12334212)=="\n _===_\n (O.O)/\n ( : )\n ( : )\n");
-    CHECK(snowman(4232212)=="\n _===_\n (o O)\n\\( : )/\n ( : )\n");
-    CHECK(snowman(12411222)=="\n _===_\n\\(-..)\n (\" \")>\n ( : )\n");
+    CHECK(nospaces(snowman(11111111))==nospaces(\n _===_\n (.,.)\n<( : )>\n ( : )\n"));
+    CHECK(nospaces(snowman(22412131))==nospaces(\n  ___ \n  ....\n\\(-..)\n (> <)>\n ( : )\n"));
+    CHECK(nospaces(snowman(12411223))==nospaces(\n _===_\n\\(-..)\n (\" \")>\n (___)\n"));
+    CHECK(nospaces(snowman(32334144))==nospaces(\n   _  \n  /_\\ \n (o.o)\n (   )>\n (   )\n"));
+    CHECK(nospaces(snowman(12341234))==nospaces(\n _===_\n (O.o)/\n<(> <)\n (   )"));
+    CHECK(nospaces(snowman(43214321))==nospaces(\n  ___ \n (_*_)\n (o_.)\n (] [)\\ \n ( : )\n"));
+    CHECK(nospaces(snowman(43432112))==nospaces(\n  ___ \n (_*_)\n\\(-_O)\n ( : )>\n (\" \")\n"));
+    CHECK(nospaces(snowman(12334212))==nospaces(\n _===_\n (O.O)/\n ( : )\n ( : )\n"));
+    CHECK(nospaces(snowman(4232212))==nospaces(\n _===_\n (o O)\n\\( : )/\n ( : )\n"));
+    CHECK(nospaces(snowman(12411222))==nospaces(\n _===_\n\\(-..)\n (\" \")>\n ( : )\n"));
 }
 
 TEST_CASE("Bad snowman code"){
