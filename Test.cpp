@@ -22,7 +22,8 @@ string nospaces(string input) {
 	return input;
 }
 
-  CHECK(nospaces(snowman(11111111))==nospaces("\n _===_\n (.,.)\n<( : )>\n ( : )\n"));
+  TEST_CASE("good snowman code"){
+    CHECK(nospaces(snowman(11111111))==nospaces("\n _===_\n (.,.)\n<( : )>\n ( : )\n"));
     CHECK(nospaces(snowman(22412131))==nospaces("\n  ___ \n  ....\n\\(-..)\n (> <)>\n ( : )\n"));
     CHECK(nospaces(snowman(12411223))==nospaces("\n _===_\n\\(-..)\n (\" \")>\n (___)\n"));
     CHECK(nospaces(snowman(32334144))==nospaces("\n   _  \n  /_\\ \n (o.o)\n (   )>\n (   )\n"));
@@ -32,7 +33,7 @@ string nospaces(string input) {
     CHECK(nospaces(snowman(12334212))==nospaces("\n _===_\n (O.O)/\n ( : )\n ( : )\n"));
     CHECK(nospaces(snowman(4232212))==nospaces("\n _===_\n (o O)\n\\( : )/\n ( : )\n"));
     CHECK(nospaces(snowman(12411222))==nospaces("\n _===_\n\\(-..)\n (\" \")>\n ( : )\n"));
-
+}
 TEST_CASE("Bad snowman code"){
     CHECK_THROWS(snowman(555));
     CHECK_THROWS(snowman(1234432));
