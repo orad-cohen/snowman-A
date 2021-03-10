@@ -15,10 +15,10 @@ using namespace std;
  **/
 
 string nospaces(string input) {
-	std::erase(input, ' ');
-	std::erase(input, '\t');
-	std::erase(input, '\n');
-	std::erase(input, '\r');
+	input.erase(remove(input.begin(),input.end(),' '),input.end());
+  input.erase(remove(input.begin(),input.end(),'\t'),input.end());
+  input.erase(remove(input.begin(),input.end(),'\r'),input.end());
+  input.erase(remove(input.begin(),input.end(),'\n'),input.end());
 	return input;
 }
 
